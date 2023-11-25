@@ -80,6 +80,7 @@ do
 			switch(dataType){
 			case 1:
 					int sum;
+					sum = 0;
 					cout<<"input size of array "; cin >> n;
 					for (int i = 0; i <= (n-1); i++)
 					{
@@ -91,6 +92,7 @@ do
 					break;
 			case 2:
 					float floatsum;
+					floatsum = 0;
 					cout<<"Input size of array "; cin >> n;
 					for (int i = 0; i <= (n-1); i++)
 					{
