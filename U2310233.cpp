@@ -10,13 +10,14 @@ int input;
 int a[20];
 float b[20];
 char c[20];
-int n;
+int n, position;
 do
 {
-	cout<<"Input 1 for program 1 " << endl;;
-	cout<<"Input 2 for program 2 " << endl;;
-	cout<<"Input 3 for program 3 " << endl;;
-	cout<<"Input 4 for program 4 " << endl;;
+	cout<<"Input 1 for program 1 " << endl;
+	cout<<"Input 2 for program 2 " << endl;
+	cout<<"Input 3 for program 3 " << endl;
+	cout<<"Input 4 for program 4 " << endl;
+	cout<<"Input 0 to exit"<<endl;
 	cin >> input;
 	switch(input){
 		case 1://Program 1
@@ -30,7 +31,7 @@ do
 				cout<<"input size of the array "; cin>>n;
 				for (int i = 0; i <=(n-1); i++)
 				{
-					cout<<"Input value "; cin>>a[i];
+					cout<<"input value for one particular element "; cin>>a[i];
 				}
 				for (int i = 0; i <=(n-1); i++)
 				{
@@ -45,7 +46,7 @@ do
 				cout<<"input size of the array ";cin >> n;
 				for (int i = 0; i <=(n-1); i++)
 				{
-					cout<<"Input value "; cin>>b[i];
+					cout<<"input value for one particular element "; cin>>b[i];
 				}
 				for (int i = 0; i <=(n-1); i++)
 				{
@@ -60,7 +61,7 @@ do
 				cout<<"Input size the array ";cin >> n;
 				for (int i = 0; i <=(n-1); i++)
 				{
-					cout<<"Input value "; cin>>c[i];
+					cout<<"input value for one particular element "; cin>>c[i];
 				}
 				for (int i = 0; i <=(n-1); i++)
 				{
@@ -75,7 +76,6 @@ do
 		case 2://Program 2
 			cout<<"input 1 for integers " <<endl;
 			cout<<"input 2 for float numbers " << endl;
-			cout<<"input 3 for characters " << endl;
 			cin >> dataType;
 			switch(dataType){
 			case 1:
@@ -83,23 +83,23 @@ do
 					cout<<"input size of array "; cin >> n;
 					for (int i = 0; i <= (n-1); i++)
 					{
-						cout<<"input value "; cin >> a[i];
+						cout<<"input value for one particular element "; cin >> a[i];
 						sum += a[i];
 
 					}
-					cout<<"Avarage value is "<< (sum/(n)) << endl;
+					cout<<"Avarage value is " << (sum/n) << endl;
 					break;
 			case 2:
 					float floatsum;
 					cout<<"Input size of array "; cin >> n;
 					for (int i = 0; i <= (n-1); i++)
 					{
-						cout<<"input value "; cin >> b[i];
+						cout<<"input value for one particular element "; cin >> b[i];
 						floatsum += b[i];
 					}
 					cout<<"Avarage value is "<< (floatsum/n) << endl;
-
 			}
+			break;
 		case 3://Program 3
 			cout<<"input 1 for integers " <<endl;
 			cout<<"input 2 for float numbers " << endl;
@@ -107,11 +107,11 @@ do
 			cin >> dataType;
 			switch(dataType){
 			case 1:
-				int position, integer;
+				int integer;
 				cout<<"Input size of array "; cin >> n;
 				for (int i = 0; i <= (n-1); i++)
 				{
-					cout<<"Input value "; cin >> a[i];
+					cout<<"input value for one particular element "; cin >> a[i];
 				}
 				cout<<"Array before insertion "<<endl;
 				for (int i = 0; i <= (n-1); i++)
@@ -139,7 +139,7 @@ do
 				cout<<"Input size of array ";cin>>n;
 				for (int i = 0; i <=(n-1); i++)
 				{
-					cout<<"Input value "; cin >> b[i];
+					cout<<"input value for one particular element "; cin >> b[i];
 				}
 				cout<<"Array before insertion "<<endl;
 				for (int i = 0; i <=(n-1); i++)
@@ -166,7 +166,7 @@ do
 				cout<<"Input size of array ";cin>>n;
 				for (int i = 0; i <=(n-1); i++)
 				{
-					cout<<"Input value "; cin >> c[i];
+					cout<<"input value for one particular element "; cin >> c[i];
 				}
 				cout<<"Array before insertion "<<endl;
 				for (int i = 0; i <=(n-1); i++)
@@ -187,9 +187,78 @@ do
 					cout<<c[i]<<'\t';
 				}
 				cout<<endl;
+				break;
 			}
-			
-	}
+			break;
+		case 4://Program 4
+			cout<<"input 1 for integers " <<endl;
+			cout<<"input 2 for float numbers " << endl;
+			cout<<"input 3 for characters " << endl;
+			cin >> dataType;
+			switch(dataType){
+			case 1:
+				cout<<"Input size of array "; cin >> n;
+    			for(int i = 0; i <= (n-1); i++){
+        			cout<<"input value for one particular element "; cin >> a[i];
+    			}
+    			cout<<"Array before deletion "<<endl;
+    			for(int i = 0; i <= (n-1); i++){
+        			cout<<a[i]<<'\t';
+    			}
+    			cout<<endl;
+    			cout<<"Input position of element you want to delete "; cin >> position;
+    			for(int i = (position - 1); i<=(n-1); i++) {
+        			a[i]  = a[i+1];    
+    			}
+    			cout<<"Array after deletion "<<endl;
+    			for(int i = 0; i <= (n-2); i++){
+        			cout<<a[i]<<'\t';
+    			}
+    			cout<<endl;
+    			break;
+    		case 2:
+    			cout<<"Input size of array "; cin >> n;
+    			for(int i = 0; i <= (n-1); i++){
+        			cout<<"input value for one particular element "; cin >> b[i];
+    			}
+    			cout<<"Array before deletion "<<endl;
+    			for(int i = 0; i <= (n-1); i++){
+        			cout<<b[i]<<'\t';
+    			}
+    			cout<<endl;
+    			cout<<"Input position of element you want to delete "; cin >> position;
+    			for(int i = (position - 1); i<=(n-1); i++) {
+        			b[i]  = b[i+1];    
+    			}
+    			cout<<"Array after deletion "<<endl;
+    			for(int i = 0; i <= (n-2); i++){
+        			cout<<b[i]<<'\t';
+    			}
+    			cout<<endl;
+    			break;
+    		case 3:
+    			cout<<"Input size of array "; cin >> n;
+    			for(int i = 0; i <= (n-1); i++){
+        			cout<<"input value for one particular element "; cin >> c[i];
+    			}
+    			cout<<"Array before deletion "<<endl;
+    			for(int i = 0; i <= (n-1); i++){
+        			cout<<c[i]<<'\t';
+    			}
+    			cout<<endl;
+    			cout<<"Input position of element you want to delete "; cin >> position;
+    			for(int i = (position - 1); i<=(n-1); i++) {
+        			c[i]  = c[i+1];    
+    			}
+    			cout<<"Array after deletion "<<endl;
+    			for(int i = 0; i <= (n-2); i++){
+        			cout<<c[i]<<'\t';
+    			}
+    			cout<<endl;
+    			break;
+
+			}
+		}
 
 } while (input != 0);
 
