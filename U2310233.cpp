@@ -133,9 +133,62 @@ do
 					cout<<a[i]<<'\t';
 				}
 				cout<<endl;
-
+				break;
+			case 2:
+				float floatnum;
+				cout<<"Input size of array ";cin>>n;
+				for (int i = 0; i <=(n-1); i++)
+				{
+					cout<<"Input value "; cin >> b[i];
+				}
+				cout<<"Array before insertion "<<endl;
+				for (int i = 0; i <=(n-1); i++)
+				{
+					cout<<b[i]<<'\t';
+				}
+				cout<<endl;
+				cout<<"Input float number you want to insert "; cin >> floatnum;
+				cout<<"Input position "; cin >> position;
+				for (int i = n; i>= position; i--)
+				{
+					b[i] = b[i-1];
+				}
+				b[position - 1] = floatnum;
+				cout<<"Aray after insertion "<<endl;
+				for (int i = 0; i <=n; i++)
+				{
+					cout<<b[i]<<'\t';
+				}
+				cout<<endl;
+				break;
+			case 3:
+				char insertedchar;
+				cout<<"Input size of array ";cin>>n;
+				for (int i = 0; i <=(n-1); i++)
+				{
+					cout<<"Input value "; cin >> c[i];
+				}
+				cout<<"Array before insertion "<<endl;
+				for (int i = 0; i <=(n-1); i++)
+				{
+					cout<<c[i]<<'\t';
+				}
+				cout<<endl;
+				cout<<"Input character you want to insert "; cin >> insertedchar;
+				cout<<"Input position "; cin >> position;
+				for (int i = n; i>= position; i--)
+				{
+					c[i] = c[i-1];
+				}
+				c[position - 1] = insertedchar;
+				cout<<"Aray after insertion "<<endl;
+				for (int i = 0; i <=n; i++)
+				{
+					cout<<c[i]<<'\t';
+				}
+				cout<<endl;
 			}
-		case 4:
+			
 	}
 
 } while (input != 0);
